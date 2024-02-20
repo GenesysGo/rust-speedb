@@ -5,11 +5,11 @@ version = "0.0.3"
 edition = "2018"
 rust-version = "1.63"
 authors = ["Tyler Neely <t@jujit.su>", "David Greenberg <dsg123456789@gmail.com>"]
-repository = "https://github.com/speedb-io/rust-speedb"
+repository = "https://github.com/GenesysGo/rust-speedb"
 license = "Apache-2.0"
 categories = [ "database" ]
 keywords = ["database", "embedded", "LSM-tree", "persistence"]
-homepage = "https://github.com/speedb-io/rust-speedb"
+homepage = "https://github.com/GenesysGo/rust-speedb"
 exclude = [
     ".gitignore",
     ".travis.yml",
