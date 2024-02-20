@@ -1574,6 +1574,31 @@ impl Options {
         }
     }
 
+    /// If true, uses an optimized write path that pipelines writes better in the
+    /// presence of multiple writers. Only some memtable_factory-s would really
+    /// benefit from this write flow, as it requires support for fast concurrent
+    /// insertion in order to be effective.
+    /// This is an experimental feature.
+    ///
+    /// Default: false
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use speedb::Options;
+    ///
+    /// let mut opts = Options::default();
+    /// opts.use_spdb_writes(true);
+    /// ```
+    pub fn set_use_spdb_writes(&mut self, enabled: bool) {
+        unsafe {
+            ffi::rocksdb_options_set_use_spdb_writes(
+                self.inner,
+                c_uchar::from(enabled),
+            );
+        }
+    }
+
     /// If true, threads synchronizing with the write batch group leader will wait for up to
     /// write_thread_max_yield_usec before blocking on a mutex. This can substantially improve
     /// throughput for concurrent workloads, regardless of whether allow_concurrent_memtable_write
