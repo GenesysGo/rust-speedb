@@ -5,4 +5,4 @@
 [submodule "speedb_sys/speedb"]
 	path = libspeedb-sys/speedb
 	url =  https://github.com/GenesysGo/speedb.git
-	branch = main
+	branch = release/2.6
